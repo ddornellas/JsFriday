@@ -108,9 +108,16 @@ hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-// Display the result in the element with id="demo"
-contador.innerHTML = days + "<span class='horario'>d </span>" + hours + "<span class='horario'>h </span> "
-+ minutes + "<span class='horario'>m </span> " + seconds + "<span class='horario'>s </span> ";
+// Display the result in the element with id="contador"
+if (days === isNaN || hours === isNaN || minutes === isNaN || seconds === isNaN ){
+
+   contador.innerHTML = "error";   
+} else{
+ 
+    contador.innerHTML = days + "<span class='horario'>d </span>" + hours + "<span class='horario'>h </span> "
++ minutes + "<span class='horario'>m </span> " + seconds + "<span class='horario'>s </span> ";  
+}  
+
 
 // If the count down is finished, write some text 
 if (distance < 0) {
